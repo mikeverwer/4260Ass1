@@ -1,2 +1,4 @@
 *x.csv
 *x.parquet
+.vscode/
+venv/
