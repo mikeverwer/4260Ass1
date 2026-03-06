@@ -7,14 +7,17 @@ base_df = pd.read_csv(base_file)
 
 print(f"Base CSV: {len(base_df):,} rows, {base_df.memory_usage(deep=True).sum() / 1e6:.1f} MB")
 
-scales = [10, 100]
+scales = [1, 10, 100]
 
 for scale in scales:
     print(f"\n=== Creating {scale}x scale ===")
     
     # 1. Create ballooned DataFrame (Pandas)
     start = time.time()
-    balloon_df = pd.concat([base_df] * scale, ignore_index=True)
+    if scale == 1:
+        balloon_df = base_df
+    else:
+        balloon_df = pd.concat([base_df] * scale, ignore_index=True)
     balloon_time = time.time() - start
     
     # 2. Save CSV
