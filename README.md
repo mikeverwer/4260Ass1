@@ -23,7 +23,7 @@ To activate the environment run the command(s) described based on your python in
 
 The file `part1.py` contains the code that will expand the base `all_stocks_5yr.csv` file to 10x and 100x sizes in both `.csv` and `.parquet` formats. The code compares file size and read/write time for both file formats. The file can be run standalone, but the benchmark outputs are shown below.
 
-The csv file format is consitently faster to read across all file sizes tested, but parquet files are at minimum 3x smaller and typically write around 10x faster. At the base file size, the difference in terms of percentages are significant, but the actual deltas are quite small. Therefore, I will be using the csv format for the rest of the assignment.
+The csv file format is consistently faster to read across all file sizes tested, but parquet files are at minimum 3x smaller and typically write around 10x faster. At the base file size, the difference in terms of percentages are significant, but the actual deltas are quite small. Therefore, I will be using the csv format for the rest of the assignment.
 
 ### Benchmarks
 ```
